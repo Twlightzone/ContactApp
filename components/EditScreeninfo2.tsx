@@ -5,7 +5,7 @@ import Colors from '../constants/Colors';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
-export default function EditScreenInfoForScreenOne({ path }: { path: string }) {
+export default function EditScreenInfoForScreenTwo({ path }: { path: string }) {
   return (
     <View>
       <View style={styles.getStartedContainer}>
@@ -13,7 +13,7 @@ export default function EditScreenInfoForScreenOne({ path }: { path: string }) {
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          U have Screen one open rn.
+          U have Screen 2 open rn.
         </Text>
 
         <View
@@ -27,7 +27,7 @@ export default function EditScreenInfoForScreenOne({ path }: { path: string }) {
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-            THIS IS SCREEN ONE OPEN RIGHT?
+            THIS IS THE SECOND SCREEN DID IT WORK??
         </Text>
       </View>
 
