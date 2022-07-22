@@ -17,9 +17,9 @@ export default function EditScreenInfoForHelpScreen({ path }: { path: string }) 
             Discord id :  Twlight_zone#7037, {"\n"}
             Mail :  twlightzonehelp@gmail.com, {"\n"}
             WhatsApp :  If u have been given this app u might already have my number {"\n"}
-            <TouchableOpacity onPress={handleHelpPressForArmaan}>
+            <TouchableOpacity onPress={handleHelpPressForArmaan}><MonoText>
             Github : https://github.com/Twlightzone {"\n"}
-            </TouchableOpacity>
+            </MonoText></TouchableOpacity>
             {"\n"}
             {"\n"}
         </Text>
@@ -30,9 +30,9 @@ export default function EditScreenInfoForHelpScreen({ path }: { path: string }) 
             Discord id :  Arsh_DEV#7525, {"\n"}
             Mail :  //add it arsh, {"\n"}
             WhatsApp :  //add this too, {"\n"}
-            <TouchableOpacity onPress={handleHelpPressForArsh}>
+            <TouchableOpacity onPress={handleHelpPressForArsh}><MonoText>
             Github : https://github.com/Aradhya-Shaswat {"\n"}
-            </TouchableOpacity> 
+            </MonoText></TouchableOpacity> 
             {"\n"}
             {"\n"}
             Everyone who is added later plz add ur contact things here too :)
