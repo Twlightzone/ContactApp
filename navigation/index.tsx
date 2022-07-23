@@ -87,8 +87,8 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
-        options={{
-          title: 'Tab Two',
+        options={({ navigation }: RootTabScreenProps<'TabTwo'>) => ({
+          title: 'Home Screen',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
@@ -104,7 +104,7 @@ function BottomTabNavigator() {
               />
             </Pressable>
           ),
-        }}
+        })}
       />
     </BottomTab.Navigator>
   );
