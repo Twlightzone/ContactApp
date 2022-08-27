@@ -17,6 +17,11 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen'; 
+
+import { AntDesign } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -68,7 +73,7 @@ function BottomTabNavigator() {
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Contacts',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <AntDesign name="contacts" size={24} color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -90,7 +95,7 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={({ navigation }: RootTabScreenProps<'TabTwo'>) => ({
           title: 'Call logs',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons name="ios-call" size={24} color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -112,7 +117,7 @@ function BottomTabNavigator() {
         component={TabThreeScreen}
         options={({ navigation }: RootTabScreenProps<'TabTwo'>) => ({
           title: 'Thy Report',
-          tabBarIcon: ({ color }) => <TabBarIcon name="circle" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="report" size={24} color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
