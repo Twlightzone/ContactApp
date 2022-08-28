@@ -1,12 +1,14 @@
 import * as React from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import Container from '../screens/Container';
 
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
 export default function ContactScreen({ path }: { path: string }) {
   return (
+<Container>
     <View>
       <View style={styles.getStartedContainer}>
         <Text
@@ -23,6 +25,7 @@ export default function ContactScreen({ path }: { path: string }) {
         </Text>
       </View>
     </View>
+</Container>
   );
 }
 

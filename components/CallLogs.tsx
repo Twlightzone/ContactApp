@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-
-import { MonoText } from './StyledText';
+import Container from '../screens/Container';
 import { Text, View } from './Themed';
 
 export default function ScreenTwo({ path }: { path: string }) {
   return (
+    <Container>
     <View>
       <View style={styles.getStartedContainer}>
         <Text
@@ -14,14 +14,6 @@ export default function ScreenTwo({ path }: { path: string }) {
           darkColor="rgba(255,255,255,0.8)">
           Call logs
         </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          darkColor="rgba(255,255,255,0.05)"
-          lightColor="rgba(0,0,0,0.05)">
-          <MonoText>{path}</MonoText>
-        </View>
-
         <Text
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
@@ -30,6 +22,7 @@ export default function ScreenTwo({ path }: { path: string }) {
         </Text>
       </View>
     </View>
+  </Container>
   );
 }
 
@@ -37,13 +30,6 @@ const styles = StyleSheet.create({
   getStartedContainer: {
     alignItems: 'center',
     marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
   },
   getStartedText: {
     fontSize: 17,

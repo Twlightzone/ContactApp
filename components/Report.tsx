@@ -1,12 +1,15 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform, StatusBar } from 'react-native';
+import Container from '../screens/Container';
 
-import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ScreenTwo({ path }: { path: string }) {
   return (
+<Container>
     <View>
+      <SafeAreaView style={styles.droidSafeArea} />
       <View style={styles.getStartedContainer}>
         <Text
           style={styles.getStartedText}
@@ -14,14 +17,6 @@ export default function ScreenTwo({ path }: { path: string }) {
           darkColor="rgba(255,255,255,0.8)">
           Thy report
         </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          darkColor="rgba(255,255,255,0.05)"
-          lightColor="rgba(0,0,0,0.05)">
-          <MonoText>{path}</MonoText>
-        </View>
-
         <Text
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
@@ -30,6 +25,7 @@ export default function ScreenTwo({ path }: { path: string }) {
         </Text>
       </View>
     </View>
+</Container>
   );
 }
 
@@ -38,12 +34,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 50,
   },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightContainer: {
-    borderRadius: 3,
-    paddingHorizontal: 4,
+  droidSafeArea : {
+    marginTop : Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
   getStartedText: {
     fontSize: 17,
