@@ -8,17 +8,8 @@ export default function ScreenTwo({ path }: { path: string }) {
     <Container>
     <View>
       <View style={styles.getStartedContainer}>
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
-          Call logs
-        </Text>
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
-            :|
+        <Text style={styles.getStartedText}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim mi sit amet nisl fringilla fringilla non a nulla.{"\n"} Fusce erat dolor, finibus eget mattis sed, scelerisque sit amet diam. Donec sagittis orci est, semper porttitor mi elementum id.
         </Text>
       </View>
     </View>
@@ -33,7 +24,6 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     fontSize: 17,
-    lineHeight: 24,
     textAlign: 'center',
   },
 });
