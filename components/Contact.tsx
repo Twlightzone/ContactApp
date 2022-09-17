@@ -1,27 +1,54 @@
-import * as React from 'react';
-import { StyleSheet, Platform, StatusBar } from 'react-native';
+import React, {Component} from 'react';
+import { StyleSheet, Platform, StatusBar, FlatList } from 'react-native';
 import Container from '../screens/Container';
+
+import { firebaseConfig } from '../config'
+import firebase from 'firebase';
 
 import { Text, View } from './Themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function ScreenTwo({ path }: { path: string }) {
+export default class ScreenTwo extends Component {
+
+  constructor(props : any){
+    super(props)
+    this.state = {
+      contactID : "",
+      contactNumber : "",
+      allContacts : [],
+    }
+  }
+
+  getContactDetails = () => {
+
+    firebaseConfig.collection("Contacts")
+                  .limit(10)
+                  .get()
+                  .then(snapshot => {
+                    snapshot.docs.map(doc => {
+                      this.setState({
+                        allContacts : [...this.state.allContacts,doc.data()]
+                      })
+                    })
+                  })
+  };
+
+  render(){
   return (
-<Container>
+//  <Container>
     <View>
       <SafeAreaView style={styles.droidSafeArea} />
-      <View style={styles.getStartedContainer}>
-        <Text style={styles.getStartedText}>
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim mi sit amet nisl fringilla fringilla non a nulla.{"\n"} Fusce erat dolor, finibus eget mattis sed, scelerisque sit amet diam. Donec sagittis orci est, semper porttitor mi elementum id.
-        </Text>
+      <View style={styles.container}>
+      <FlatList data={this.state.allContacts} />
       </View>
     </View>
-</Container>
+//  </Container> 
   );
+  }
 }
 
 const styles = StyleSheet.create({
-  getStartedContainer: {
+  container: {
     alignItems: 'center',
     marginHorizontal: 50,
   },
